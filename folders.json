@@ -1,0 +1,66 @@
+{
+  "AW18": [
+    {
+      "asset_id": "d6d27ef826df646469a1112287dcbdb9",
+      "public_id": "iamisigo/AW18/274603269_1067622983806882_1153148540650192212_n_zdkhoy",
+      "format": "jpg",
+      "version": 1695472181,
+      "resource_type": "image",
+      "type": "upload",
+      "created_at": "2023-09-23T12:29:41Z",
+      "bytes": 349482,
+      "width": 1080,
+      "height": 1080,
+      "folder": "iamisigo/AW18",
+      "url": "http://res.cloudinary.com/ds4krgzbj/image/upload/v1695472181/iamisigo/AW18/274603269_1067622983806882_1153148540650192212_n_zdkhoy.jpg",
+      "secure_url": "https://res.cloudinary.com/ds4krgzbj/image/upload/v1695472181/iamisigo/AW18/274603269_1067622983806882_1153148540650192212_n_zdkhoy.jpg"
+    },
+    {
+      "asset_id": "7c8f08d4da4543054c35bc5a997f0a91",
+      "public_id": "iamisigo/AW18/315057607_1092473231455322_7981748751984870250_n_zb650f",
+      "format": "jpg",
+      "version": 1695472177,
+      "resource_type": "image",
+      "type": "upload",
+      "created_at": "2023-09-23T12:29:37Z",
+      "bytes": 115526,
+      "width": 1000,
+      "height": 1000,
+      "folder": "iamisigo/AW18",
+      "url": "http://res.cloudinary.com/ds4krgzbj/image/upload/v1695472177/iamisigo/AW18/315057607_1092473231455322_7981748751984870250_n_zb650f.jpg",
+      "secure_url": "https://res.cloudinary.com/ds4krgzbj/image/upload/v1695472177/iamisigo/AW18/315057607_1092473231455322_7981748751984870250_n_zb650f.jpg"
+    }
+  ],
+  "SS18": [
+    {
+      "asset_id": "ec0522d5cccc7bae6749d1884e2a5a39",
+      "public_id": "iamisigo/SS18/bg2_dggx1q",
+      "format": "png",
+      "version": 1695472206,
+      "resource_type": "image",
+      "type": "upload",
+      "created_at": "2023-09-23T12:30:06Z",
+      "bytes": 634125,
+      "width": 1000,
+      "height": 1000,
+      "folder": "iamisigo/SS18",
+      "url": "http://res.cloudinary.com/ds4krgzbj/image/upload/v1695472206/iamisigo/SS18/bg2_dggx1q.png",
+      "secure_url": "https://res.cloudinary.com/ds4krgzbj/image/upload/v1695472206/iamisigo/SS18/bg2_dggx1q.png"
+    },
+    {
+      "asset_id": "378f9176edd042e2028a0bb2893d7bb0",
+      "public_id": "iamisigo/SS18/bg3_zyg1dl",
+      "format": "png",
+      "version": 1695472206,
+      "resource_type": "image",
+      "type": "upload",
+      "created_at": "2023-09-23T12:30:06Z",
+      "bytes": 1606284,
+      "width": 1080,
+      "height": 1080,
+      "folder": "iamisigo/SS18",
+      "url": "http://res.cloudinary.com/ds4krgzbj/image/upload/v1695472206/iamisigo/SS18/bg3_zyg1dl.png",
+      "secure_url": "https://res.cloudinary.com/ds4krgzbj/image/upload/v1695472206/iamisigo/SS18/bg3_zyg1dl.png"
+    }
+  ]
+}
