@@ -26,15 +26,22 @@ const getFolders = async () => {
     folders[folder.name] = []
   });
 
-  const resources = await cloudinary.api.resources({ max_results: 100 });
+    // Fetch images
+    const imageResources = await cloudinary.api.resources({ max_results: 200, resource_type: 'image' });
 
-  Object.keys(folders).forEach(folderName => {
-    const assets = resources.resources.filter(({ folder }) => folder === `${rootFolderName}/${folderName}`);
-    
-    folders[folderName] = assets;
-  });
-
-  return folders;
+    // Fetch videos
+    const videoResources = await cloudinary.api.resources({ max_results: 200, resource_type: 'video' });
+  
+    // Merge image and video resources
+    const allResources = [...imageResources.resources, ...videoResources.resources];
+  
+    Object.keys(folders).forEach((folderName) => {
+      const assets = allResources.filter(({ folder }) => folder === `${rootFolderName}/${folderName}`);
+  
+      folders[folderName] = assets;
+    });
+  
+    return folders;
 }
 
 // Define an endpoint that retrieves folders from Cloudinary
