@@ -1,7 +1,8 @@
 const express = require('express');
 const cloudinary = require('cloudinary').v2; // Make sure you have the 'cloudinary' package installed
 const dotenv = require('dotenv')
-const fs = require('fs')
+const fs = require('fs');
+const { log } = require('console');
 
 dotenv.config()
 
@@ -17,6 +18,38 @@ cloudinary.config({
 
 const rootFolderName = 'iamisigo'
 
+const fetchResourcesByType = async (resourceType) => {
+  let resources = [];
+  let next_cursor = null;
+
+  try {
+    do {
+      const result = await cloudinary.api.resources({
+        max_results: 100,
+        next_cursor,
+        type: 'upload',
+        resource_type: resourceType, // 'image' or 'video'
+        prefix: 'iamisigo/', // Limit to this folder
+      });
+
+      resources = resources.concat(result.resources);
+      next_cursor = result.next_cursor;
+    } while (next_cursor);
+
+    return resources;
+  } catch (error) {
+    console.error(`Error fetching ${resourceType} resources:`, error);
+    return [];
+  }
+};
+
+const fetchAllResources = async () => {
+  const images = await fetchResourcesByType('image');
+  const videos = await fetchResourcesByType('video');
+
+  return [...images, ...videos];
+};
+
 const getFolders = async () => {
   const results = await cloudinary.api.sub_folders(rootFolderName);
   let folders = {}
@@ -26,10 +59,10 @@ const getFolders = async () => {
     folders[folder.name] = []
   });
 
-  const resources = await cloudinary.api.resources({ max_results: 100 });
+  const resources = await fetchAllResources();
 
   Object.keys(folders).forEach(folderName => {
-    const assets = resources.resources.filter(({ folder }) => folder === `${rootFolderName}/${folderName}`);
+    const assets = resources.filter(({ folder }) => folder === `${rootFolderName}/${folderName}`);
     
     folders[folderName] = assets;
   });
